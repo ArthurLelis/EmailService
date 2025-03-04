@@ -1,20 +1,22 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
-import { VercelRequest, VercelResponse } from '@vercel/node';
 
 const port = 8787;
 const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["http://localhost:3000", "https://mzassessoriafinanceira.com.br/"], // Adapte conforme necessário
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-app.options("*", (req, res) => {
+app.options("/mz", (req: Request, res: Response) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.status(200).send();
 });
 
@@ -23,7 +25,4 @@ app.use(routes);
 
 app.listen(port, () => console.log(`🔥 Server started at `));
 
-export default (
-  request: VercelRequest,
-  response: VercelResponse
-) => app(request, response);
+export default app;

@@ -3,6 +3,8 @@ import con from '../../connection';
 import { mainTemplate, replyTemplate } from '../../templates/mz';
 
 export function sendEmailMZ(request: Request, response: Response) {
+  response.setHeader("Access-Control-Allow-Origin", "*");
+
   const emailProvider = con({
     host: 'smtp.office365.com',
     port: 587,
