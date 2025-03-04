@@ -5,18 +5,24 @@ import routes from './routes';
 const port = 8787;
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://mzassessoriafinanceira.com.br',
+];
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://mzassessoriafinanceira.com.br/"], // Adapte conforme necessário
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: allowedOrigins,
+    methods: ['POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
 app.options("/mz", (req: Request, res: Response) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader('Access-Control-Max-Age', '10');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.status(200).send();
 });
 
