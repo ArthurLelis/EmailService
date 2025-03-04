@@ -6,7 +6,13 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 const port = 8787;
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://mzassessoriafinanceira.com.br/'],
+    methods: ['POST'],
+    allowedHeaders: ['Content-Type'],
+  })
+);
 app.use(express.json());
 app.use(routes);
 
