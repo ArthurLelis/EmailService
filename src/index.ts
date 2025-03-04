@@ -19,6 +19,8 @@ app.use(
 );
 
 app.options("/mz", (req: Request, res: Response) => {
+  console.log(req.get('origin'));
+
   res.setHeader('Access-Control-Max-Age', '10');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', '*');
