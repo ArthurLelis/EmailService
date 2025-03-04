@@ -7,7 +7,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://mzassessoriafinanceira.com.br',
+  'https://mzassessoriafinanceira.com.br/',
 ];
 
 app.use(
