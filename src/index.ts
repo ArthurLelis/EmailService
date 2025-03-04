@@ -8,11 +8,16 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://mzassessoriafinanceira.com.br/'],
-    methods: ['POST'],
-    allowedHeaders: ['Content-Type'],
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.options("*", (req, res) => {
+  res.status(200).send();
+});
+
 app.use(express.json());
 app.use(routes);
 
