@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "dev": "npx tsx src",
     "start": "node dist/index.js"
   },
@@ -16,13 +16,13 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "nodemailer": "^6.10.0",
-    "vercel": "^41.3.1"
+    "vercel": "^41.3.1",
+    "typescript": "^5.8.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.5",
-    "@types/nodemailer": "^6.4.17",
-    "typescript": "^5.8.2"
+    "@types/nodemailer": "^6.4.17"
   }
 }
