@@ -3,7 +3,6 @@ import express, { Request, Response, NextFunction } from 'express';
 
 import router from './routes';
 
-const port = 8787;
 const app = express();
 
 app.use(cors({
@@ -13,23 +12,7 @@ app.use(cors({
   credentials: true,
 }));
 
-app.options("*", cors());
-
-// app.use((request: Request, response: Response, next: NextFunction): void => {
-//   response.header('Access-Control-Allow-Origin', "https://mzassessoriafinanceira.com.br");
-//   response.header('Access-Control-Allow-Methods', "GET, POST, OPTIONS");
-//   response.header('Access-Control-Allow-Headers', "Content-Type, Authorization");
-
-//   console.log(request);
-
-//   if (request.method === 'OPTIONS') {
-//     response.sendStatus(204);
-//   }
-
-//   next();
-// });
-
 app.use(express.json());
 app.use(router);
 
-app.listen(port, () => console.log(`🔥 Server started at `));
+export default app;
