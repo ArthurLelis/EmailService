@@ -16,9 +16,9 @@ app.use(cors({
 app.options("*", cors());
 
 app.use((request: Request, response: Response, next: NextFunction): void => {
-  response.header("Access-Control-Allow-Origin", "https://mzassessoriafinanceira.com.br");
-  response.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  response.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  response.header('Access-Control-Allow-Origin', "https://mzassessoriafinanceira.com.br");
+  response.header('Access-Control-Allow-Methods', "GET, POST, OPTIONS");
+  response.header('Access-Control-Allow-Headers', "Content-Type, Authorization");
 
   console.log(request);
 
