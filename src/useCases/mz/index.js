@@ -24,6 +24,7 @@ function connection() {
 export function sendEmailMZ(request, response) {
   const emailProvider = connection();
 
+  console.info(request);
   const { name, email, message } = request.body;
 
   const template = mainTemplate(name, email, message);
