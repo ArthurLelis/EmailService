@@ -22,13 +22,14 @@
 import cors from 'cors';
 import express from 'express';
 
-import router from './src/routes';
+// import router from './src/routes';
+import { sendEmailMZ } from './src/useCases/mz'
 
 const port = 3005;
 const app = express()
 
 app.use(cors());
-app.use(router);
+// app.use(router);
 
 // app.get('/', (req, res) => {
 //   res.send('Express Typescript on Vercel')
@@ -37,5 +38,7 @@ app.use(router);
 // app.get('/ping', (req, res) => {
 //   res.send('pong 🏓')
 // });
+
+app.post('/mz', sendEmailMZ);
 
 app.listen(port, () => console.log(`Server is listening on ${port}`));
