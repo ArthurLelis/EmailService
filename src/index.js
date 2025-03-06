@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 
-import router from './src/routes';
+import router from './routes';
 
 const port = 3005;
 const app = express()
