@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 
-import routes from './routes';
+import router from './routes';
 
 const port = 8787;
 const app = express();
@@ -30,6 +30,6 @@ app.use((request: Request, response: Response, next: NextFunction): void => {
 });
 
 app.use(express.json());
-app.use(routes);
+app.use(router);
 
 app.listen(port, () => console.log(`🔥 Server started at `));
