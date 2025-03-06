@@ -6,7 +6,12 @@ import routes from './routes';
 const port = 8787;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://mzassessoriafinanceira.com.br',
+  methods: 'GET, POST, OPTIONS',
+  allowedHeaders: 'Content-Type, Authorization',
+}));
+
 app.use(express.json());
 app.use(routes);
 
