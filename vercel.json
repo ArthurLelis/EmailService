@@ -2,14 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/index.ts",
+      "src": "api/express.ts",
       "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/mz",
-      "dest": "/api/index.ts"
     }
   ]
 }
