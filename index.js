@@ -1,8 +1,6 @@
 // import cors from 'cors';
 // import express, { Request, Response, NextFunction } from 'express';
 
-// import router from './routes';
-
 // const app = express();
 
 // app.use(cors({
@@ -18,24 +16,26 @@
 // });
 
 // app.use(express.json());
-// app.use(router);
 
 // export default app;
 
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
 
+import router from './src/routes';
+
+const port = 3005;
 const app = express()
-const port = 3000;
 
 app.use(cors());
+app.use(router);
 
-app.get('/', (req, res) => {
-  res.send('Express Typescript on Vercel')
-});
+// app.get('/', (req, res) => {
+//   res.send('Express Typescript on Vercel')
+// });
 
-app.get('/ping', (req, res) => {
-  res.send('pong 🏓')
-});
+// app.get('/ping', (req, res) => {
+//   res.send('pong 🏓')
+// });
 
 app.listen(port, () => console.log(`Server is listening on ${port}`));
