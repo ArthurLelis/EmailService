@@ -31,11 +31,11 @@ const port = 3000;
 app.use(cors());
 
 app.get('/', (req, res) => {
-  return res.send('Express Typescript on Vercel')
-})
+  res.send('Express Typescript on Vercel')
+});
 
 app.get('/ping', (req, res) => {
-  return res.send('pong 🏓')
-})
+  res.send('pong 🏓')
+});
 
 app.listen(port, () => console.log(`Server is listening on ${port}`));
