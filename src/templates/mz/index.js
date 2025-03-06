@@ -1,4 +1,4 @@
-const mainTemplate = (name: string, email: string, message: string) => {
+const mainTemplate = (name, email, message) => {
   return {
     from: 'mz@mzassessoriafinanceira.com.br',
     to: 'mz@mzassessoriafinanceira.com.br',
@@ -11,7 +11,7 @@ const mainTemplate = (name: string, email: string, message: string) => {
   };
 }
 
-const replyTemplate = (name: string, email: string, message: string) => {
+const replyTemplate = (name, email, message) => {
   return {
     from: 'MZ Assessoria Financeira <mz@mzassessoriafinanceira.com.br>',
     to: email,

@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 import { mainTemplate, replyTemplate } from '../../templates/mz';
 
 function connection() {
-  const emailProvider: nodemailer.Transporter = nodemailer.createTransport({
+  const emailProvider = nodemailer.createTransport({
     host: 'smtp.office365.com',
     port: 587,
     secure: false,
@@ -21,7 +21,7 @@ function connection() {
   return emailProvider;
 }
 
-export function sendEmailMZ(request: Request, response: Response) {
+export function sendEmailMZ(request, response) {
   const emailProvider = connection();
 
   const { name, email, message } = request.body;
@@ -39,7 +39,7 @@ export function sendEmailMZ(request: Request, response: Response) {
     });
 }
 
-export function reply(request: Request, response: Response) {
+export function reply(request, response) {
   const emailProvider = connection();
 
   const { name, email, message } = request.body;

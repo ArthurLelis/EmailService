@@ -22,19 +22,20 @@
 
 // export default app;
 
-import express, { Request, Response } from 'express';
+const express = require('express');
+const cors = require('cors');
 
 const app = express()
-const port = process.env.PORT || 8080
+const port = 3000;
 
-app.get('/', (_req: Request, res: Response) => {
+app.use(cors());
+
+app.get('/', (req, res) => {
   return res.send('Express Typescript on Vercel')
 })
 
-app.get('/ping', (_req: Request, res: Response) => {
+app.get('/ping', (req, res) => {
   return res.send('pong 🏓')
 })
 
-app.listen(port, () => {
-  return console.log(`Server is listening on ${port}`)
-})
+app.listen(port, () => console.log(`Server is listening on ${port}`));

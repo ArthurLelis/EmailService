@@ -4,32 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist",
-    "dev": "tsx src"
+    "dev": "npx tsx src"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@vercel/node": "^5.1.11",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "nodemailer": "^6.10.0",
-    "typescript": "^5.8.2",
     "vercel": "^41.3.1"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.13.5",
-    "@types/nodemailer": "^6.4.17"
   }
 }
