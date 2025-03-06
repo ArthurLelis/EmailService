@@ -10,7 +10,10 @@ app.use(cors({
   origin: 'https://mzassessoriafinanceira.com.br',
   methods: 'GET, POST, OPTIONS',
   allowedHeaders: 'Content-Type, Authorization',
+  credentials: true,
 }));
+
+app.options("*", cors());
 
 app.use((request: Request, response: Response, next: NextFunction): void => {
   response.header("Access-Control-Allow-Origin", "https://mzassessoriafinanceira.com.br");
